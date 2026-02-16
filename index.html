@@ -3,190 +3,230 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Liens officiels - Muriel Fonseca</title>
+  <title>TSA·LACH — Consulting & Stratégie</title>
   <link rel="stylesheet" href="./dist/output.css" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', ui-sans-serif, system-ui, sans-serif; }
-    @keyframes soft-float {
-      0% { transform: translateY(0px) scale(1); }
-      50% { transform: translateY(-5px) scale(1.02); }
-      100% { transform: translateY(0px) scale(1); }
+    body { font-family: 'Inter', sans-serif; background-color: #F5F5F5; }
+    /* animations douces */
+    @keyframes subtle-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
     }
-    .logo-float {
-      animation: soft-float 6s ease-in-out infinite;
+    .hover-lift {
+      transition: all 0.25s ease;
     }
-    @keyframes shine {
-      0% { transform: translateX(-100%) rotate(45deg); }
-      100% { transform: translateX(100%) rotate(45deg); }
+    .hover-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 30px -10px rgba(26, 77, 62, 0.15);
     }
-    @keyframes icon-pulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.05); }
+    /* carte avec bordure qui brille au survol */
+    .glow-card {
+      transition: border-color 0.3s, box-shadow 0.3s;
     }
-    @keyframes glow-pulse {
-      0%, 100% { box-shadow: 0 0 20px rgba(232, 92, 58, 0.1); }
-      50% { box-shadow: 0 0 30px rgba(232, 92, 58, 0.2); }
+    .glow-card:hover {
+      border-color: #E85C3A;
+      box-shadow: 0 0 0 3px rgba(232, 92, 58, 0.1);
     }
-    .card-shine {
-      position: relative;
-      overflow: hidden;
+    .badge {
+      background: #1A4D3E;
+      color: white;
+      font-weight: 500;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      font-size: 0.7rem;
+      letter-spacing: 0.3px;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
     }
-    .card-shine::before {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 30%;
-      height: 200%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-      transform: translateX(-100%) rotate(45deg);
+    .badge i-feather {
+      width: 12px;
+      height: 12px;
     }
-    .card-shine:hover::before {
-      animation: shine 1s ease-in-out;
-    }
-    .icon-animate:hover {
-      animation: icon-pulse 0.6s ease-in-out;
+    /* rend les icônes feather propres */
+    i-feather {
+      stroke-width: 1.8;
     }
   </style>
 </head>
-<body class="min-h-screen bg-[#F5E8DE] text-[#1A4D3E] antialiased relative overflow-x-hidden">
-  <!-- NOUVELLE PALETTE :
-    - Fond: #F5E8DE (beige plus doux et lumineux)
-    - Texte principal: #1A4D3E (vert plus profond et élégant)
-    - Accent: #E85C3A (orange plus raffiné)
-  -->
+<body class="antialiased relative">
 
-  <!-- Éléments flous adaptés à la nouvelle palette -->
-  <div class="pointer-events-none fixed inset-0 overflow-hidden">
-    <div class="absolute -top-24 -left-24 h-80 w-80 rounded-full bg-[#E85C3A]/15 blur-3xl"></div>
-    <div class="absolute top-1/2 -right-20 h-96 w-96 rounded-full bg-[#F0D9CC]/50 blur-3xl"></div>
-    <div class="absolute bottom-0 left-1/3 h-72 w-72 rounded-full bg-[#E85C3A]/10 blur-3xl"></div>
+  <!-- fond très neutre, presque blanc cassé -->
+  <div class="fixed inset-0 bg-[#F9F7F5] -z-10"></div>
+  <!-- cercles très discrets -->
+  <div class="fixed inset-0 overflow-hidden -z-5 pointer-events-none">
+    <div class="absolute -top-20 -left-20 w-80 h-80 rounded-full bg-[#E85C3A]/5 blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-[#1A4D3E]/5 blur-3xl"></div>
   </div>
 
-  <main class="relative mx-auto max-w-2xl px-6 py-8 sm:py-12">
+  <main class="max-w-6xl mx-auto px-4 sm:px-6 py-8 sm:py-12 relative">
     
-    <!-- HEADER simplifié -->
-    <header class="mb-4 flex justify-end text-xs text-[#1A4D3E]/50">
-      <div class="rounded-full bg-white/10 px-3 py-1 backdrop-blur-sm">
-        ✦ tsa·lach
+    <!-- Header épuré, deux lignes fines -->
+    <div class="flex justify-between items-center mb-6 sm:mb-8 text-xs sm:text-sm text-[#1A4D3E]/60 border-b border-[#1A4D3E]/10 pb-3 sm:pb-4">
+      <div class="flex items-center gap-2">
+        <span class="w-1.5 h-1.5 rounded-full bg-[#E85C3A]"></span>
+        <span class="font-medium tracking-wider">TSA·LACH</span>
       </div>
-    </header>
+      <div class="hidden sm:flex gap-4 md:gap-6">
+        <span>Conseil</span>
+        <span>Stratégie</span>
+        <span>Innovation</span>
+      </div>
+    </div>
 
-    <!-- ZONE LOGO optimisée mobile -->
-    <div class="relative flex flex-col items-center justify-center mb-8 sm:mb-10">
-      <div class="absolute inset-x-0 top-1/2 h-24 w-48 sm:w-64 -translate-y-1/2 rounded-full bg-[#E85C3A]/10 blur-2xl"></div>
-      
-      <div class="relative flex items-center justify-center">
-        <div class="absolute -left-6 sm:-left-10 h-16 w-16 sm:h-20 sm:w-20 rounded-full border-2 border-[#1A4D3E]/10 bg-white/5 backdrop-blur-sm"></div>
-        <div class="absolute -right-6 sm:-right-8 h-12 w-12 sm:h-16 sm:w-16 rounded-full border-2 border-[#E85C3A]/15 bg-white/10 backdrop-blur-sm"></div>
+    <!-- Carte blanche principale – photo + intro (sans émoji, uniquement icônes) -->
+    <div class="bg-white/90 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-xl border border-[#1A4D3E]/10 overflow-hidden mb-8 sm:mb-10 hover-lift transition-all">
+      <div class="grid md:grid-cols-5 gap-0">
+        <!-- Colonne image : 2/5 -->
+        <div class="md:col-span-2 relative bg-gradient-to-br from-[#1A4D3E]/5 to-[#E85C3A]/5 p-6 sm:p-8 flex items-center justify-center">
+          <div class="relative w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 rounded-2xl overflow-hidden shadow-2xl border-4 border-white">
+            <!-- Remplacez par votre photo (chemin correct) -->
+            <img src="images/MurielV4.jpg" alt="Consultante Stratégie Digitale" class="w-full h-full object-cover object-center">
+          </div>
+          <!-- petite pastille "disponible" avec icône check -->
+          <div class="absolute -bottom-2 left-1/2 transform -translate-x-1/2 bg-white rounded-full py-1.5 pl-3 pr-4 shadow-md flex items-center gap-1.5 text-xs font-medium text-[#1A4D3E] border border-[#1A4D3E]/10">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+            <span>Disponible</span>
+          </div>
+        </div>
         
-        <div class="relative z-10 flex items-center gap-3 sm:gap-5 rounded-full bg-gradient-to-r from-white/80 to-white/60 px-4 py-2.5 pr-5 sm:px-7 sm:py-3 sm:pr-8 shadow-2xl backdrop-blur-md ring-1 ring-[#1A4D3E]/20 logo-float">
-          <div class="relative">
-            <div class="absolute inset-0 rounded-full bg-[#E85C3A]/20 blur-md"></div>
-            <div class="relative h-16 w-16 sm:h-20 sm:w-20 overflow-hidden rounded-full border-2 border-white/70 shadow-xl">
-              <img src="images/Logo_Muriel.jpg" alt="Logo entreprise" class="h-full w-full object-cover" />
+        <!-- Colonne texte : 3/5 -->
+        <div class="md:col-span-3 p-6 sm:p-8 flex flex-col justify-center">
+          <!-- petit label avec icône utilisateur -->
+          <div class="flex items-center gap-2 text-xs uppercase tracking-wider text-[#E85C3A] font-semibold mb-2">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E85C3A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+            <span>Consultante associée</span>
+          </div>
+          <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[#1A4D3E] tracking-tight mb-2 sm:mb-3">Votre Consultante</h1>
+          <div class="flex items-center gap-2 mb-3 sm:mb-4">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity="0.6"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            <span class="text-sm sm:text-base text-[#1A4D3E]/80 font-medium">Stratégie digitale & innovation</span>
+          </div>
+          <p class="text-sm sm:text-base text-[#1A4D3E]/70 leading-relaxed mb-4 sm:mb-6 max-w-lg">
+            Accompagnement sur mesure pour les entreprises en quête de sens et de performance. 
+            Je vous aide à structurer votre vision et à la concrétiser.
+          </p>
+          <!-- Tags sans émoji, avec icônes petites -->
+          <div class="flex flex-wrap gap-3">
+            <div class="bg-[#F0EDEA] rounded-full px-4 py-2 inline-flex items-center gap-2 text-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>
+              <span>Croissance</span>
+            </div>
+            <div class="bg-[#F0EDEA] rounded-full px-4 py-2 inline-flex items-center gap-2 text-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+              <span>Stratégie</span>
+            </div>
+            <div class="bg-[#F0EDEA] rounded-full px-4 py-2 inline-flex items-center gap-2 text-sm">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              <span>Digital</span>
             </div>
           </div>
-          <div class="flex flex-col">
-            <span class="text-[0.6rem] sm:text-xs font-semibold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[#1A4D3E]/60">expertise</span>
-            <span class="text-base sm:text-lg font-bold text-[#1A4D3E] whitespace-nowrap">Muriel Fonseca</span>
-            <span class="text-[0.6rem] sm:text-xs text-[#1A4D3E]/60">consulting</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section réseaux sociaux – design sobre, que des icônes SVG -->
+    <div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-lg border border-[#1A4D3E]/10 p-5 sm:p-6 md:p-8">
+      
+      <!-- en-tête avec icône "share" -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 mb-6 sm:mb-8">
+        <div class="flex items-center gap-3">
+          <div class="w-8 h-8 rounded-full bg-[#1A4D3E]/10 flex items-center justify-center flex-shrink-0">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+          </div>
+          <div>
+            <h2 class="text-lg sm:text-xl font-bold text-[#1A4D3E]">Réseaux professionnels</h2>
+            <p class="text-xs text-[#1A4D3E]/60">liens directs · profil certifié</p>
           </div>
         </div>
-      </div>
-      
-      <div class="mt-3 sm:mt-4 h-px w-24 sm:w-32 bg-gradient-to-r from-transparent via-[#E85C3A]/30 to-transparent"></div>
-    </div>
-
-    <!-- Carte principale avec glassmorphism avancé -->
-    <div class="rounded-2xl sm:rounded-3xl border border-[#1A4D3E]/15 bg-gradient-to-br from-white/70 via-white/60 to-white/50 p-5 sm:p-7 md:p-9 shadow-2xl backdrop-blur-2xl transition-all duration-500 hover:shadow-[0_20px_60px_rgba(26,77,62,0.15)] hover:border-[#E85C3A]/20" style="animation: glow-pulse 4s ease-in-out infinite;">
-      
-      <!-- En-tête de carte avec typographie améliorée -->
-      <div class="flex items-start justify-between gap-3 sm:gap-4">
-        <div>
-          <p class="text-[0.6rem] sm:text-[0.65rem] font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-[#E85C3A]/80">Connectez-vous</p>
-          <h1 class="mt-2 sm:mt-3 text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight leading-tight text-[#1A4D3E]">Réseaux sociaux <span class="text-[#E85C3A]">officiels</span></h1>
-          <p class="mt-2 sm:mt-3 text-sm sm:text-base md:text-lg text-[#1A4D3E]/75 leading-relaxed">Tous les liens vérifiés</p>
+        <div class="badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+          <span>OFFICIEL</span>
         </div>
-        <span class="inline-flex items-center rounded-full bg-gradient-to-r from-[#1A4D3E]/10 to-[#E85C3A]/10 px-2.5 py-1 sm:px-4 sm:py-1.5 text-[0.6rem] sm:text-xs font-bold uppercase tracking-wide sm:tracking-wider text-[#1A4D3E] ring-1 ring-[#E85C3A]/30 backdrop-blur-sm shadow-lg">
-          ✅
-        </span>
       </div>
 
-      <!-- Grille des liens avec effets avancés -->
-      <ul class="mt-6 sm:mt-8 md:mt-10 grid gap-4 sm:gap-5 md:gap-6 sm:grid-cols-2">
-        <!-- Facebook -->
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" 
-             class="card-shine group flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-[#1A4D3E]/15 bg-gradient-to-br from-white/90 to-white/70 px-4 py-4 sm:px-5 sm:py-5 text-base sm:text-lg font-semibold text-[#1A4D3E] shadow-lg shadow-[#1A4D3E]/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#1877F2]/30 hover:bg-gradient-to-br hover:from-[#1877F2]/5 hover:to-white/80 hover:shadow-2xl hover:shadow-[#1877F2]/10">
-            <span class="icon-animate flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-[#1877F2]/15 text-[#1877F2] ring-2 ring-[#1877F2]/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#1877F2]/25 group-hover:ring-[#1877F2]/50">
-              <svg viewBox="0 0 24 24" class="h-5 w-5 sm:h-6 sm:w-6 fill-current">
-                <path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.04 3.66 9.21 8.44 9.93v-7.02H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.85h2.74l-.44 2.91h-2.3V22c4.78-.72 8.44-4.89 8.44-9.93z" />
-              </svg>
-            </span>
-            <span class="flex-1 transition-all duration-300 group-hover:text-[#1877F2]">Facebook</span>
-            <span class="ml-auto text-[#1A4D3E]/30 transition-all duration-300 group-hover:text-[#E85C3A] group-hover:translate-x-1 group-hover:scale-125">↗</span>
-          </a>
-        </li>
-        <!-- Instagram -->
-        <li>
-          <a href="https://www.instagram.com/tsalachconsulting?igsh=MWM5aW90aXQ2MDRiMg%3D%3D&utm_source=qr" target="_blank" rel="noopener noreferrer" 
-             class="card-shine group flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-[#1A4D3E]/15 bg-gradient-to-br from-white/90 to-white/70 px-4 py-4 sm:px-5 sm:py-5 text-base sm:text-lg font-semibold text-[#1A4D3E] shadow-lg shadow-[#1A4D3E]/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#DD2A7B]/30 hover:bg-gradient-to-br hover:from-[#DD2A7B]/5 hover:to-white/80 hover:shadow-2xl hover:shadow-[#DD2A7B]/10">
-            <span class="icon-animate flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#F58529] via-[#DD2A7B] to-[#8134AF] text-white ring-2 ring-[#DD2A7B]/30 transition-all duration-300 group-hover:scale-110 group-hover:ring-[#DD2A7B]/60">
-              <svg viewBox="0 0 24 24" class="h-5 w-5 sm:h-6 sm:w-6 fill-current">
-                <path d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4zm5 5.5A3.5 3.5 0 1 0 15.5 12 3.5 3.5 0 0 0 12 8.5zm7-1.25a1.25 1.25 0 1 0-1.25-1.25A1.25 1.25 0 0 0 19 7.25zM12 10a2 2 0 1 1-2 2 2 2 0 0 1 2-2z" />
-              </svg>
-            </span>
-            <span class="flex-1 transition-all duration-300 group-hover:text-[#DD2A7B]">Instagram</span>
-            <span class="ml-auto text-[#1A4D3E]/30 transition-all duration-300 group-hover:text-[#E85C3A] group-hover:translate-x-1 group-hover:scale-125">↗</span>
-          </a>
-        </li>
-        <!-- LinkedIn -->
-        <li>
-          <a href="https://www.linkedin.com/in/louise-muriel-fonseca-45006219b" target="_blank" rel="noopener noreferrer" 
-             class="card-shine group flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-[#1A4D3E]/15 bg-gradient-to-br from-white/90 to-white/70 px-4 py-4 sm:px-5 sm:py-5 text-base sm:text-lg font-semibold text-[#1A4D3E] shadow-lg shadow-[#1A4D3E]/5 transition-all duration-300 hover:-translate-y-2 hover:border-[#0A66C2]/30 hover:bg-gradient-to-br hover:from-[#0A66C2]/5 hover:to-white/80 hover:shadow-2xl hover:shadow-[#0A66C2]/10">
-            <span class="icon-animate flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-[#0A66C2]/15 text-[#0A66C2] ring-2 ring-[#0A66C2]/30 transition-all duration-300 group-hover:scale-110 group-hover:bg-[#0A66C2]/25 group-hover:ring-[#0A66C2]/50">
-              <svg viewBox="0 0 24 24" class="h-5 w-5 sm:h-6 sm:w-6 fill-current">
-                <path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.67H9.33V9h3.41v1.56h.05c.47-.9 1.6-1.85 3.29-1.85 3.52 0 4.17 2.32 4.17 5.33v6.41zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z" />
-              </svg>
-            </span>
-            <span class="flex-1 transition-all duration-300 group-hover:text-[#0A66C2]">LinkedIn</span>
-            <span class="ml-auto text-[#1A4D3E]/30 transition-all duration-300 group-hover:text-[#E85C3A] group-hover:translate-x-1 group-hover:scale-125">↗</span>
-          </a>
-        </li>
-        <!-- X / Twitter -->
-        <li>
-          <a href="#" target="_blank" rel="noopener noreferrer" 
-             class="card-shine group flex items-center gap-3 sm:gap-4 rounded-xl sm:rounded-2xl border border-[#1A4D3E]/15 bg-gradient-to-br from-white/90 to-white/70 px-4 py-4 sm:px-5 sm:py-5 text-base sm:text-lg font-semibold text-[#1A4D3E] shadow-lg shadow-[#1A4D3E]/5 transition-all duration-300 hover:-translate-y-2 hover:border-black/30 hover:bg-gradient-to-br hover:from-black/5 hover:to-white/80 hover:shadow-2xl hover:shadow-black/10">
-            <span class="icon-animate flex h-12 w-12 sm:h-14 sm:w-14 shrink-0 items-center justify-center rounded-xl bg-black/10 text-black ring-2 ring-black/20 transition-all duration-300 group-hover:scale-110 group-hover:bg-black/15 group-hover:ring-black/40">
-              <svg viewBox="0 0 24 24" class="h-5 w-5 sm:h-6 sm:w-6 fill-current">
-                <path d="M17.5 3h3.1l-6.77 7.73L22 21h-6.3l-4.94-6.11L5.2 21H2.1l7.24-8.29L2 3h6.45l4.45 5.5L17.5 3zm-1.09 16.3h1.72L7.6 4.6H5.76l10.65 14.7z" />
-              </svg>
-            </span>
-            <span class="flex-1 transition-all duration-300 group-hover:text-black">X (Twitter)</span>
-            <span class="ml-auto text-[#1A4D3E]/30 transition-all duration-300 group-hover:text-[#E85C3A] group-hover:translate-x-1 group-hover:scale-125">↗</span>
-          </a>
-        </li>
-      </ul>
+      <!-- Grille de liens 2x2 avec icônes -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        
+        <!-- LinkedIn (lien réel) -->
+        <a href="https://www.linkedin.com/in/louise-muriel-fonseca-45006219b" target="_blank" rel="noopener" 
+           class="group flex items-center gap-4 p-4 rounded-2xl border border-[#1A4D3E]/10 bg-white/60 hover:bg-white transition-all glow-card">
+          <div class="w-12 h-12 rounded-xl bg-[#0A66C2]/10 flex items-center justify-center text-[#0A66C2] group-hover:bg-[#0A66C2] group-hover:text-white transition-all">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.67H9.33V9h3.41v1.56h.05c.47-.9 1.6-1.85 3.29-1.85 3.52 0 4.17 2.32 4.17 5.33v6.41zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.55V9h3.57v11.45z"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-[#1A4D3E]">LinkedIn</div>
+            <div class="text-xs text-[#1A4D3E]/50">Suivez mon actualité pro</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 group-hover:opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
 
-      <!-- Rappel discret -->
-      <div class="mt-4 sm:mt-6 text-center text-[0.65rem] sm:text-xs text-[#1A4D3E]/40">
-        <span class="inline-flex items-center gap-1.5 sm:gap-2 rounded-full bg-[#E85C3A]/5 px-2.5 py-1 sm:px-3 sm:py-1.5">↗ Liens externes</span>
+        <!-- Instagram (lien réel) -->
+        <a href="https://www.instagram.com/tsalachconsulting" target="_blank" rel="noopener" 
+           class="group flex items-center gap-4 p-4 rounded-2xl border border-[#1A4D3E]/10 bg-white/60 hover:bg-white transition-all glow-card">
+          <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-[#F58529]/10 via-[#DD2A7B]/10 to-[#8134AF]/10 flex items-center justify-center text-[#DD2A7B] group-hover:from-[#F58529] group-hover:via-[#DD2A7B] group-hover:to-[#8134AF] group-hover:text-white transition-all">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-[#1A4D3E]">Instagram</div>
+            <div class="text-xs text-[#1A4D3E]/50">Coulisses & conseils</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 group-hover:opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+
+        <!-- Facebook (placeholder mais avec icône) -->
+        <a href="#" target="_blank" rel="noopener" 
+           class="group flex items-center gap-4 p-4 rounded-2xl border border-[#1A4D3E]/10 bg-white/60 hover:bg-white transition-all glow-card">
+          <div class="w-12 h-12 rounded-xl bg-[#1877F2]/10 flex items-center justify-center text-[#1877F2] group-hover:bg-[#1877F2] group-hover:text-white transition-all">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.07C22 6.48 17.52 2 11.93 2S2 6.48 2 12.07c0 5.04 3.66 9.21 8.44 9.93v-7.02H7.9v-2.91h2.54V9.41c0-2.5 1.49-3.88 3.77-3.88 1.09 0 2.23.2 2.23.2v2.45h-1.25c-1.23 0-1.61.76-1.61 1.54v1.85h2.74l-.44 2.91h-2.3V22c4.78-.72 8.44-4.89 8.44-9.93z"/></svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-[#1A4D3E]">Facebook</div>
+            <div class="text-xs text-[#1A4D3E]/50">Page entreprise</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 group-hover:opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+
+        <!-- TikTok (icône personnalisée car feather ne l'a pas, mais on utilise un SVG inline propre) -->
+        <a href="#" target="_blank" rel="noopener" 
+           class="group flex items-center gap-4 p-4 rounded-2xl border border-[#1A4D3E]/10 bg-white/60 hover:bg-white transition-all glow-card">
+          <div class="w-12 h-12 rounded-xl bg-black/5 flex items-center justify-center text-black group-hover:bg-black group-hover:text-white transition-all">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z" />
+            </svg>
+          </div>
+          <div class="flex-1">
+            <div class="font-semibold text-[#1A4D3E]">TikTok</div>
+            <div class="text-xs text-[#1A4D3E]/50">Contenu créatif</div>
+          </div>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#1A4D3E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 group-hover:opacity-80 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"><line x1="7" y1="17" x2="17" y2="7"></line><polyline points="7 7 17 7 17 17"></polyline></svg>
+        </a>
+      </div>
+
+      <!-- ligne de séparation fine -->
+      <div class="my-6 border-t border-[#1A4D3E]/5"></div>
+
+      <!-- mini contact avec icônes -->
+      <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-3 sm:gap-4 text-xs sm:text-sm text-[#1A4D3E]/60">
+        <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4">
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            <span class="text-xs sm:text-sm">contact@tsalach.com</span>
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            <span class="text-xs sm:text-sm">+33 6 12 34 56 78</span>
+          </span>
+        </div>
+        <span class="text-[0.65rem] sm:text-xs text-[#1A4D3E]/40">© 2026 — Tous droits réservés</span>
       </div>
     </div>
 
-    <!-- Footer avec nouvelle palette -->
-    <footer class="relative mt-8 sm:mt-10 text-center text-xs sm:text-sm text-[#1A4D3E]/70">
-      <div class="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 rounded-full bg-white/30 px-4 py-1.5 sm:px-5 sm:py-2 backdrop-blur-sm ring-1 ring-[#1A4D3E]/10">
-        <span class="whitespace-nowrap">© 2026 L-M</span>
-        <span class="hidden h-1 w-1 rounded-full bg-[#E85C3A]/50 sm:inline-block"></span>
-        <span>tsalachconsulting</span>
-        <span class="hidden h-1 w-1 rounded-full bg-[#E85C3A]/50 sm:inline-block"></span>
-        <span class="tracking-tight">✨ tous droits réservés</span>
-      </div>
-      <p class="mt-2 sm:mt-3 text-[0.65rem] sm:text-xs text-[#1A4D3E]/40">Mise à jour février 2026</p>
-    </footer>
+    <!-- footer très simple -->
+    <div class="mt-8 text-center text-xs text-[#1A4D3E]/40">
+      TSA·LACH — conseil en stratégie digitale
+    </div>
   </main>
 </body>
 </html>
