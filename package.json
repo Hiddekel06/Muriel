@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "prebuild": "chmod +x node_modules/.bin/tailwindcss || true; chmod +x node_modules/.bin/@tailwindcss/cli || true",
     "build": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css",
     "watch": "npx @tailwindcss/cli -i ./src/input.css -o ./dist/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
